@@ -38,7 +38,7 @@ const Form = ({ currentId, setCurrentId }) => {
     return (
       <Paper  elevation={6}>
         <Typography variant="h6" align="center">
-          Please Sign In to create your own memories and like other's memories.
+          Please Sign In to create your own post and like other's posts.
         </Typography>
       </Paper>
     );
