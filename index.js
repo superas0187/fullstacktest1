@@ -25,9 +25,9 @@ if(process.env.NODE_ENV === "production") {
     })
 }
 
-app.get('/', (req, res) => {
-    res.send('APP IS RUNING');
-})
+// app.get('/', (req, res) => {
+//     res.send('APP IS RUNING');
+// })
 
 //  CONNECTION_URL = 'mongodb://test123:test123@cluster0-shard-00-00.c45ut.mongodb.net:27017,cluster0-shard-00-01.c45ut.mongodb.net:27017,cluster0-shard-00-02.c45ut.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-o8djq2-shard-0&authSource=admin&retryWrites=true&w=majority'
 // CONNECTION_URL = 'mongodb+srv://test123:test123@cluster0.c45ut.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
