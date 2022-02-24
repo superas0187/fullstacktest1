@@ -11,8 +11,8 @@ dotenv.config();
 
 
 
-app.use( express.json({ limit: '30mb', extended: true }));
-app.use( express.urlencoded({  limit: '30mb', extended: true }));
+app.use( express.json({  extended: true }));
+app.use( express.urlencoded({   extended: true }));
 app.use(cors());
 
 app.use('/posts', postRoutes);
@@ -22,13 +22,19 @@ app.use('/user', userRoutes);
 if (process.env.NODE_ENV === "production") {
     //server static content
     //npm run build
-    app.use(express.static(path.join(__dirname, "client/build")));
+    app.use(express.static(path.join(__dirname, "/client/build")));
+
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+    });
+} else {
+    app.get('/', (req, res) => {
+        res.send('Api running');
+    });
 }
 
 
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-});
+
 
 // app.get('/', (req, res) => {
 //     res.send('APP IS RUNING');
