@@ -15,8 +15,7 @@ app.use( express.json({  extended: true }));
 app.use( express.urlencoded({   extended: true }));
 app.use(cors());
 
-app.use('/posts', postRoutes);
-app.use('/user', userRoutes);
+
 
 
 if (process.env.NODE_ENV === "production") {
@@ -32,6 +31,9 @@ if (process.env.NODE_ENV === "production") {
         res.send('Api running');
     });
 }
+
+app.use('/posts', postRoutes);
+app.use('/user', userRoutes);
 
 
 
